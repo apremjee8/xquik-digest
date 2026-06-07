@@ -10,7 +10,9 @@
     .tweet:hover { transform: translateY(-2px); }
     .author { color: #1da1f2; font-weight: 800; text-decoration: none; font-size: 1.1em; }
     .meta { font-size: 0.9em; color: #657786; margin-top: 15px; border-top: 1px solid #f0f2f5; padding-top: 10px; }
-    .score-tag { float: right; background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; border: 1px solid #c8e6c9; }
+    .score-tag { float: right; background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; border: 1px solid #c8e6c9; margin-left: 10px; }
+    .llm-tag { float: right; background: #e3f2fd; color: #1565c0; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; border: 1px solid #bbdefb; }
+    .reasoning { font-size: 0.85em; font-style: italic; color: #546e7a; margin-top: 10px; background: #f9fbe7; padding: 8px; border-radius: 8px; }
     .link { display: inline-block; margin-top: 15px; color: #1da1f2; text-decoration: none; font-weight: 600; }
   </style>
 </head>
@@ -18,137 +20,168 @@
   <h1>Akiff's High-Signal Xquik Digest</h1>
   <p>Curated using tuned calibration from @paulg, @mcuban, @nikillinit, and other elite signal providers.</p><h2>healthcare & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 260</span>
-            <a class='author' href='https://x.com/AIForDoctors'>@AIForDoctors</a>
-            <p>One of the most important infrastructure decisions in healthcare AI is deciding where physiological data should live.<br><br>Traditional EHR databases were designed around encounters, diagnoses, medications, and documentation.<br><br>They were not designed for millions of continuous physiological measurements arriving every day.<br><br>This is where time-series storage systems become valuable.<br><br>A time-series database (TSDB) is specifically optimized for data where time is the primary organizing principle.<br><br>Examples include:<br><br>ECG waveforms<br><br>heart rate monitoring<br><br>SpO₂ streams<br><br>ventilator telemetry<br><br>arterial pressure traces<br><br>wearable sensor data<br><br>Every observation is associated with a timestamp.<br><br>Unlike traditional relational databases, time-series systems are built around temporal retrieval.<br><br>For example:<br><br>Traditional database query: "Which medications did this patient receive?"<br><br>Time-series query: "What happened during the 15 minutes before hypotension developed?"<br><br>These are fundamentally different computational problems.<br><br>The advantages of time-series systems are substantial.<br><br>They provide:<br><br>high-speed data ingestion<br><br>efficient compression<br><br>rapid temporal queries<br><br>continuous monitoring support<br><br>scalable handling of physiological streams<br><br>This makes them particularly valuable for ICU telemetry, remote patient monitoring, and real-time clinical decision support.<br><br>However, they also have limitations.<br><br>Time-series databases are not ideal for:<br><br>complex relational joins<br><br>clinical documentation<br><br>billing systems<br><br>longitudinal encounter management<br><br>rich metadata relationships<br><br>That is why they typically complement EHR systems rather than replace them.<br><br>Scalability introduces additional challenges.<br><br>As hospitals increase monitoring intensity, systems must handle:<br><br>billions of timestamps<br><br>continuous device streams<br><br>growing retention periods<br><br>increasing query concurrency<br><br>real-time analytics workloads<br><br>At scale, storage is often not the primary challenge.<br><br>Retrieval and indexing become the bottlenecks.<br><br>Many modern healthcare AI architectures therefore combine:<br><br>SQL databases for structured EHR data<br><br>Time-series databases for telemetry<br><br>Object storage for imaging<br><br>Apache Kafka for event streaming<br><br>HL7 FHIR services for interoperability<br><br>The future is increasingly hybrid.<br><br>The deeper insight is this:<br><br>Healthcare data is becoming multimodal.<br><br>And multimodal data rarely fits efficiently into a single storage architecture.<br><br>That may explain why many healthcare AI scalability problems are actually infrastructure design problems.<br><br>As continuous monitoring expands, should hospitals invest more in collecting additional physiological signals or in improving the infrastructure used to interpret existing signals?<br><br>#MedicalAI #ClinicalAI #AIInMedicine</p>
+            <span class='score-tag'>Heuristic: 343</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/AI_4_Healthcare'>@AI_4_Healthcare</a>
+            <p>🔥 The burning question: Is 𝑨𝑰 𝒇𝒐𝒓 𝑨𝒍𝒍 a good Rx for #cdnhealth?<br><br>Is it perfect? No.<br>Is it progress? Yes.<br>Is it actionable? Absolutely!<br><br>Does it meet the moment? See below ... ⤵️<br><br>As you likely know by now (if you've been following my feed), yesterday, Canada dropped its massive "AI for All" National Strategy. It’s a multi-year, multi-billion-dollar bet on innovation, trust, and productivity.<br><br>But how does it stack up for AI in healthcare, medtech, clinicians, other healthcare professionals, and most importantly, patient care for 42 million of us?<br><br>🔑 Here are my five key takeaways ...<br><br>→ The "AI Missions" Era Begins 🏥<br><br>The strategy officially launches Canada's first-ever AI Missions (aka: mini-moohshots) program, backed by an initial $200M flagship health mission. The goal isn't just funding lab research; it’s about accelerating the deployment of mature and validated clinical AI reasoning systems into frontline patient care, chronic disease management, and slashing ER wait times.<br><br>→ Tackling the maladies of "pyjama time" & EHR-itis 🩺<br><br>A massive win for clinician wellness: the strategy explicitly prioritizes using AI to reduce administrative burdens. Expect accelerated funding and institutional backing for clinical tools like AI scribes to fight physician burnout and get doctors back to what matters: patients ... you, me, our families, neighbours, and friends.<br><br>→ Scaling "Sovereign Health Data" platforms 🔐<br><br>The strategy treats health data as a strategic national asset, and it is! It prioritizes building secure, Canadian-controlled data infrastructure. For health tech, this means a major push toward unified, high-quality medical datasets (bilingual and indigenous considerations included) with ironclad FPT privacy guardrails to protect patient privacy and grow trust.<br><br>→ Balancing Innovation vs Guardrails ⚖️<br><br>The Prime Minister framed the entire strategy around public trust. While the plan avoids immediate, heavy-handed AI-specific regulation (opting to rely on modernizing existing privacy and online safety laws), hello CMA and others, are already demanding strict clinical safety guardrails. This area of follow-on legislation and its sequencing (where the Trudeau government failed) is critical.<br><br>→ Elevating Canada to be an "AI Skills Nation" ... eh! 🎓<br><br>It’s not just about algorithms; it’s about the people using them. The plan introduces free, accessible AI training nationwide and offers specialized AI tools/agents to post-secondary students ... including those in medicine.<br><br>The BIG goal is to build an inherently AI-literate national, and more specifically, healthcare-implicated, workforce.<br><br>📍 And it is here, on this national issue of foundational AI literacy and capacity (with many details still to come), where this strategy definitely 'meets the moment.'<br><br>Bottom line: I'm ALL for AI for ALL  ✅<br>@EvanLSolomon #cdnpoli</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 0 | 🔁 0 | 💬 0
+              ❤️ 7 | 🔁 2 | 💬 1
             </div>
-            <a class='link' href='https://x.com/AIForDoctors/status/2062180026821578752'>View on X</a>
+            <a class='link' href='https://x.com/AI_4_Healthcare/status/2062962873110860234'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 233</span>
+            <span class='score-tag'>Heuristic: 233</span>
+            <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/withcline'>@withcline</a>
             <p>Most doctors interact with AI through their EHR. The problem with that is EHRs aren't harnesses and when doctors use them they can't fine-tune the context, the model, or the performance. Instead, they're stuck with someone else's configuration. So if you're using AI in your medical practice, you 100% need to be managing and customizing these 5 things.<br><br>1. Deployment<br>2. Token optimization<br>3. Model usage and routing<br>4. Context engineering<br>5. Agent handoff orchestration<br><br>1. Deployment <br>- This used to be your EHR vendor's job. You paid them for the software, they deployed and maintained it under HIPAA. But now you're the builder, and with agent runtime (how agents command the code), you absolutely DO NOT want to hand that access back to a vendor when you're the one paying the LLM API bill. The only questions you should be asking are whether the deployment is HIPAA-compliant and whether you have audit trails and API session logging.<br><br>2. Token optimization<br>- You're burning through tokens before a project even starts, sometimes 100k or more. You should know every file and every system prompt your agent uses. Otherwise you're just lighting money on fire.<br><br>3. Model usage and routing<br>- Not all doctors are the same, but they're all doctors. They specialize in the medicine they practice, and LLMs are no different. They're all LLMs, but they don't all have the same training. If Claude Opus 4.8 is an Ortho, and the only model your EHR pushes is Claude Opus 4.8, then every clinical case and every operational task in your practice is being managed by an Ortho. That's why you need benchmarks: to understand which model performs best for which task and which agent.<br><br>4. Context engineering<br>- This is the brain of your entire practice: your clinical operations, your SOPs, your panel, your staff, your payments, your skills. If you can't customize this, you're using bolt-on AI, your data is NOT YOUR DATA, and you do not OWN YOUR PRACTICE.<br><br>5. Agent handoff orchestration<br>- Agent-to-agent communication is what makes AI special. It lets you run multiple agents in parallel (more than one agent running and completing tasks at the same time), with the right models, the right skills, and the least token consumption. Where practices go wrong is treating this like a Ronco Showtime Rotisserie. You can't set it and forget it. Agents need management just like people do, so if you aren't the one setting the rules, you're not really the boss. Your EHR vendor is.<br><br>This is why every doctor and clinician should be practicing with a clinical agentic harness like Cline, not a legacy EHR with architecture designed for pre-AI era deployment processes.</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
               ❤️ 3 | 🔁 0 | 💬 0
             </div>
             <a class='link' href='https://x.com/withcline/status/2063386609794367829'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 219</span>
-            <a class='author' href='https://x.com/marktluszcz'>@marktluszcz</a>
-            <p>📌 @khealth 's Enterprise footprint is rocking👇<br><br>7 Health Systems Now Operationally Live:<br><br>K Health's clinical AI agents are now deployed and operationally live across 7 major US health systems: Cedars-Sinai, Mayo Clinic, Hackensack Meridian, Hartford HealthCare, Mass General Brigham, Northwell Health, and Penn Medicine. Penn Medicine's multi-year collaboration adds K Health's AI clinical agents across EHR workflows for patient intake automation and clinical decision support. Combined institutional footprint = 2,500+ providers across top-tier US health systems. This is serious enterprise infrastructure moat, that is slowing being put into place...</p>
+            <span class='score-tag'>Heuristic: 178</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/Sid_Healthcare'>@Sid_Healthcare</a>
+            <p>.@viz_ai Launches Viz Assist: The First Multimodal #AI Agent Platform that combines imaging and #EHR data to identify critical patients, surface real-time insights, and act as a clinical co-pilot for care teams | #radiology  https://t.co/JxD4whyfet</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 5 | 🔁 1 | 💬 1
+              ❤️ 4 | 🔁 1 | 💬 1
             </div>
-            <a class='link' href='https://x.com/marktluszcz/status/2061448576291512759'>View on X</a>
+            <a class='link' href='https://x.com/Sid_Healthcare/status/1986848119674568928'>View on X</a>
           </div><h2>AI & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 1578</span>
-            <a class='author' href='https://x.com/israfill'>@israfill</a>
-            <p>Microsoft launched their own coding AI and it's FREE inside GitHub Copilot starting today 😳<br><br>not rented from OpenAI. built by Microsoft.<br><br>it's called MAI-Code-1-Flash and it's rolling out to ALL copilot tiers right now<br><br>part of microsoft's new MAI model family:<br><br>- MAI-Code-1-Flash (coding)<br>- MAI-Thinking-1 (reasoning, 35B params)<br>- MAI-Image-2.5 (image gen)<br>- MAI-Transcribe-1.5 (speech, 43 languages)<br><br>who gets it:<br><br>- free plan ✅<br>- pro plan ✅<br>- pro+ plan ✅<br>- max plan ✅<br><br>what makes it different:<br><br>- trained inside copilot's production environment, not externally tested then shipped<br>- 60% fewer tokens on complex tasks vs comparable models<br>- 85.8% on microsoft adversarial coding benchmark<br>- 256K context window<br><br>full setup guide (github copilot + MAI-Code-1-Flash - free):<br><br>step 1: create a free github account<br>> go to https://t.co/mkeXAMP9Eb<br>> sign up for free<br><br>step 2: enable github copilot<br>> go to https://t.co/MnxnSLslnO<br>> select the free plan - no credit card needed<br><br>step 3: install the VS Code extension<br>> open VS Code<br>> press ctrl+shift+x (windows) or cmd+shift+x (mac)<br>> search "GitHub Copilot"<br>> install the extension by GitHub<br><br>step 4: sign in<br>> VS Code will show a "Sign in to GitHub" prompt<br>> click it, approve in the browser, return to VS Code<br><br>step 5: open copilot chat<br>> press ctrl+shift+i (windows) or cmd+shift+i (mac)<br>> the chat panel opens on the right side<br><br>step 6: select MAI-Code-1-Flash<br>> click the model dropdown at the bottom of the chat panel<br>> choose MAI-Code-1-Flash from the list<br>> done<br><br>already have copilot? skip straight to step 5<br><br>microsoft built this without openai data, free coding model wars are getting serious.<br><br>bookmark this and start using this free model 🔖</p>
-            <div class='meta'>
-              ❤️ 963 | 🔁 164 | 💬 71
-            </div>
-            <a class='link' href='https://x.com/israfill/status/2062108803437404520'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Signal Score: 1333</span>
-            <a class='author' href='https://x.com/bigaiguy'>@bigaiguy</a>
-            <p>A kid from Shantou with no programming background got into Tsinghua University's computer science department by winning a high school informatics olympiad, then quit a job offer from Google Brain to start an AI company in Beijing with two of his college bandmates. Four years later that company released a 1 trillion parameter open-source AI model that outperformed every American closed model on coding benchmarks and became the fastest Chinese tech company in history to hit a $10 billion valuation.<br><br>His name is Yang Zhilin. The company is called Moonshot AI. The model is called Kimi K2.<br><br>Here is the story.<br><br>Yang was born in 1992 in Shantou, a small city in Guangdong province. In high school he had never written a line of code. He got selected for an informatics olympiad training program anyway. He won first prize at the Guangdong provincial level, which got him guaranteed admission to Tsinghua University.<br><br>He scored 667 on the gaokao, far above the Tsinghua cutoff. But the system placed him in Thermal Energy Engineering. He transferred to Computer Science in his sophomore year. He graduated in 2015 ranked first in his department class. During undergrad he was advised by Tang Jie, a Tsinghua professor who would later co-found another Chinese AI giant called Zhipu.<br><br>He went to Carnegie Mellon for his PhD under Ruslan Salakhutdinov and William Cohen. He finished in under four years. During that time he co-authored two of the most influential papers in modern AI, Transformer-XL and XLNet, which together shaped the long-context capabilities every modern LLM relies on. He worked at Facebook AI Research and Google Brain. He contributed to the original Google Gemini and Bard projects.<br><br>Then in November 2022 ChatGPT launched.<br><br>Yang flew back to the United States, looked at what OpenAI had done, and made up his mind. He told an interviewer later that he sensed two things were about to move at once, capital and talent, and when those two move together it is the rare moment when you can build a company from zero to one whose only purpose is AGI.<br><br>In March 2023 he founded Moonshot AI in Beijing with two Tsinghua classmates, Zhou Xinyu and Wu Yuxin. The three of them had been bandmates in a college rock group called Splay. The company name is a tribute to Pink Floyd's Dark Side of the Moon, Yang's favorite album. The company launched on the album's 50th anniversary.<br><br>He raised $60 million and built a 40-person team in three months. By 2024 he had raised over a billion dollars. The investors included Alibaba, Tencent, and Sequoia China. Moonshot AI became the fastest Chinese startup in history to reach a $10 billion valuation. ByteDance took four years. Pinduoduo took three. Moonshot did it in two.<br><br>In October 2023 they launched Kimi, a consumer chatbot with a 200,000 character context window, the longest in the world at the time. By 2024 it was running on Chinese hardware and had tens of millions of users.<br><br>Then on July 11, 2025 they released Kimi K2.<br><br>K2 is a 1 trillion parameter Mixture of Experts model that activates 32 billion parameters per inference. It is open weights. It beat GPT-4 and Claude on coding benchmarks. It outperformed DeepSeek V3 on agent tasks and tool use. Former OpenAI researcher Andrew Carr publicly said K2 communicates differently than other models, refusing to be sycophantic and pushing back on bad ideas the way few models do.<br><br>By early 2026 Moonshot had crossed $240 million in revenue. The Kimi K2.5 release exceeded the entire 2025 revenue total in under 20 days. K2.6 dropped in April 2026 with a SWE-Bench Pro score of 58.6, ahead of the leading closed-weight coding models at the time.<br><br>A kid from Shantou who had never coded a line in high school just released the open-source model that competes head-on with everything OpenAI, Google, and Anthropic have shipped.<br><br>He named it after the dark side of the moon.</p>
-            <div class='meta'>
-              ❤️ 651 | 🔁 115 | 💬 28
-            </div>
-            <a class='link' href='https://x.com/bigaiguy/status/2063224246831313339'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Signal Score: 1112</span>
+            <span class='score-tag'>Heuristic: 1112</span>
+            <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/iam_elias1'>@iam_elias1</a>
             <p>PewDiePie just embarrassed every AI startup in Silicon Valley.<br><br>He built a better local AI workspace than most funded companies. Gave it away for free. And hit 20,000 GitHub stars before most people woke up.<br><br>The project is called Odysseus. And the story behind it is more interesting than the product.<br><br>Felix Kjellberg better known as PewDiePie has 111 million YouTube subscribers. He is the most subscribed individual creator in the history of the platform. He retired from daily content in 2022 to raise his son in Japan. The world assumed he was done building things.<br><br>He was not.<br><br>He launched Odysseus on June 1, 2026 announcing it in a YouTube video titled "MY trillion $ Dollar Project is finally OUT!" a free, open-source, self-hosted AI workspace designed to be a fully private alternative to ChatGPT and Claude.<br><br>Here is what Odysseus actually does.<br><br>Odysseus tracks no user telemetry, operates entirely without subscription fees, and retains all context on your local machine. It includes advanced autonomous agents capable of running shell commands, editing files, and browsing the web safely.<br><br>Chat, agents, deep research, docs, memory, and email basically ChatGPT and Claude UX on your own hardware. 20,000 GitHub stars in 24 hours.<br><br>Here is the comparison nobody in the AI industry wants to make publicly.<br><br>ChatGPT Plus: $20 per month. Your conversations stored on OpenAI's servers. Your data used to improve their models. Their infrastructure. Their terms. Their decisions about what you can and cannot do.<br><br>Claude Pro: $20 per month. Same structure. Anthropic's servers. Anthropic's terms.<br><br>Odysseus: $0. Your hardware. Your data. Your rules. Zero telemetry. Zero bytes sent to anyone else's server. Ever.<br><br>MIT license. 88 contributors. 22,400 stars. 2,800 forks. v1.0 already released. Use any local or cloud model, zero software cost.<br><br>Here is what is inside the workspace.<br><br>Full chat interface, the same conversational UI experience as ChatGPT and Claude, running locally. Autonomous agents with shell access, file editing, and web browsing, the same agentic capabilities that Claude Code and GPT-5 offer, running on your own machine. Deep research mode multi-step autonomous research across the web, synthesized into a structured report. Document management. Persistent memory across sessions. Email integration. MCP support for connecting to any external tool or service.<br><br>Odysseus auto-registers built-in MCP servers at startup including a browser server with Playwright for page navigation, screenshots, and vision capabilities. Non-admin users do not get shell or file access by default admin-only routes including MCP management, API tokens, and model serving are admin-gated.<br><br>Works on macOS, Windows, and Linux. Uses Ollama for local model inference on Mac. Supports any Hugging Face model. Supports cloud APIs for Claude, GPT, Gemini, and DeepSeek if you want cloud performance with local orchestration.<br><br>Most of Odysseus's code was written with AI models, not just by a human.<br><br>PewDiePie used AI to build an AI workspace. Then open-sourced it. Then gave it to 111 million people for free.<br><br>Here is the detail that should make every AI founder uncomfortable.<br><br>If a traditional tech startup promised a seamless, zero-telemetry local workspace featuring autonomous agents, deep research, and automated local model orchestration completely for free you would be incredibly skeptical. The fact that this project arrives via a massive creator repository makes it one of the most fascinating disruptive plays in the open-source community this year.<br><br>OpenAI raised $40 billion.<br><br>Anthropic raised $12 billion.<br><br>PewDiePie raised nothing. Shipped a product that competes with both. And gave it away for free.<br><br>The most subscribed YouTuber in history just became an open-source AI developer.<br><br>And the product is actually good.<br><br>Source: GitHub · Gizmodo · NerdZap · ExplainX · Dhaka Tribune · June 1, 2026<br><br>(Link in the comments)</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
               ❤️ 504 | 🔁 112 | 💬 76
             </div>
             <a class='link' href='https://x.com/iam_elias1/status/2062095528742240319'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 1041</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/ArtificialAnlys'>@ArtificialAnlys</a>
+            <p>NVIDIA has just released Nemotron 3 Ultra, the new most intelligent US open weights model, with leading speed for its intelligence<br><br>Nemotron 3 Ultra scores 47.7 on the Artificial Analysis Intelligence Index, well ahead of the next strongest US open weights models, Gemma 4 31B (39.2), Nemotron 3 Super (36.0) and gpt-oss-120b (33.3), but behind the Chinese-led open weights frontier (Kimi K2.6 at 53.9).<br><br>We partnered with @NVIDIA to evaluate this model for intelligence and speed ahead of its public release. These figures use the final NVFP4 weights that NVIDIA recommends for inference, but our tests show minimal intelligence impact compared to BF16 testing, with higher precision resulting in an Artificial Analysis Intelligence Index score of 48.2 vs. the NVFP4 score of 47.7.<br><br>Key Takeaways:<br><br>➤ Nemotron 3 Ultra leads in speed for its intelligence: through BlackBox AI ahead of release, Nemotron 3 Ultra is served at over 400 output tokens per second - this is slightly faster than the typical serving speed of gpt-oss-120b despite being >4X larger, and comes with significantly greater intelligence<br><br>➤ Largest Nemotron 3 model so far: with approximately 550 billion total parameters and 55 billion active, Nemotron 3 Ultra is significantly larger than its siblings and is the largest and most intelligent US open weights model release ever<br><br>➤ Nemotron 3 Ultra is the leading US open weights model on the Artificial Analysis Intelligence and Agentic Indexes by far, but Gemma 4 31B scores ~1 point higher on the Coding Index (comprised of Terminal-Bench Hard and SciCode)</p>
+            <div class='reasoning'>Why: Grading failed.</div>
+            <div class='meta'>
+              ❤️ 690 | 🔁 57 | 💬 31
+            </div>
+            <a class='link' href='https://x.com/ArtificialAnlys/status/2062527871529439438'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 636</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/testingcatalog'>@testingcatalog</a>
+            <p>MICROSOFT 🔥: Early look at Microsoft Scout Agent for Microsoft Frontier users. <br><br>Scout agent is designed for work use cases and was recently revealed at Microsoft Build 2026. <br><br>Features 👀<br><br>> Models from OpenAI and Anthropic, including GPT-5.5 and Claude Opus 4.7<br>> Multi-step automations with support for browser use. <br>> Co-Create, an open canvas where users can collaborate with AI and export outputs as documents. <br>> Deep integration with Microsoft Teams<br>> Daily Briefing that summarises work context across connected services. <br>> Skills support, document generation, coding capabilities, and all that.<br>> Both macOS and Windows apps are available. <br><br>It would be quite a decent tool for Windows users! Yet, it is only for Frontier. Looking forward to testing their super app too.</p>
+            <div class='reasoning'>Why: Grading failed.</div>
+            <div class='meta'>
+              ❤️ 445 | 🔁 32 | 💬 18
+            </div>
+            <a class='link' href='https://x.com/testingcatalog/status/2062960629837639763'>View on X</a>
           </div><h2>indie & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 64312</span>
-            <a class='author' href='https://x.com/IndieGameJoe'>@IndieGameJoe</a>
-            <p>Two indie devs made a game where you run your own video store in the early 90s. It’s currently the #5 top-selling game on Steam.<br><br>- Rent out VHS tapes &amp; manage customers<br>- Charge Late &amp; Broken Fees<br>- Upgrade &amp; customise your store<br><br>It’s called Retro Rewind - Video Store Simulator https://t.co/LIrpX4QI9M</p>
+            <span class='score-tag'>Heuristic: 154</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/TheWorkshopGeek'>@TheWorkshopGeek</a>
+            <p>EVERYONE I RELEASED AN #indiegames ON STEAM !!!!!<br><br>That has been such a wild ride, on a lot of aspects, especially with the promotion...<br><br>Thank you everyone !<br><br>#gamdev<br><br>https://t.co/bDV9gQzoP5 https://t.co/Yf9C03U7MY</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 53190 | 🔁 4597 | 💬 1252
+              ❤️ 72 | 🔁 10 | 💬 8
             </div>
-            <a class='link' href='https://x.com/IndieGameJoe/status/2033937579205107924'>View on X</a>
+            <a class='link' href='https://x.com/TheWorkshopGeek/status/2063281625060835351'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 41207</span>
-            <a class='author' href='https://x.com/patramanchan'>@patramanchan</a>
-            <p>Big studios: "Market risk too high".<br>Indie devs: curling with office chairs it is 🪑🎯<br><br>Game: office chair curling<br>#SteamNextFest #indiegame https://t.co/Gd1QO2Yi9J</p>
+            <span class='score-tag'>Heuristic: 130</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/1001binary'>@1001binary</a>
+            <p>Hey, I’ve been building #Shippstream - a social network for indie devs, solopreneurs, and builders who want to ship in public and stay consistent.<br><br>The idea is simple:<br>you post short updates about what you’re building (we call them ships) → they go public → you get feedback + visibility → over time it builds streaks, reputation, and discovery.<br><br>If you’ve launched something or you’re building in public, you can post your updates there and let people follow your progress in real time.<br><br>It’s still early, but I’m shipping improvements constantly based on feedback.<br><br>👉 Totally free, registration open:<br>https://t.co/kc1scQgN2i<br><br>Would genuinely love to connect with other founders, indie hackers, and builders doing their own thing.<br><br>If you’re building something, drop a ship 🚀</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 34285 | 🔁 3343 | 💬 124
+              ❤️ 0 | 🔁 0 | 💬 0
             </div>
-            <a class='link' href='https://x.com/patramanchan/status/2029610391689682972'>View on X</a>
+            <a class='link' href='https://x.com/1001binary/status/2063741253590647282'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 22528</span>
-            <a class='author' href='https://x.com/IndieGameJoe'>@IndieGameJoe</a>
-            <p>This indie dev is making a handyman simulator set in the stone age where you literally help cavemen.<br><br>- Use a dinosaur to mow lawns &amp; move heavy loads<br>- Open-world repair contracts<br>- Upgrade your home &amp; workshop<br><br>Would you play this? It's called Primal Repairs. https://t.co/JbjB2dr9S0</p>
+            <span class='score-tag'>Heuristic: 122</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/micro_prose'>@micro_prose</a>
+            <p>Battlespace Command: Dev Log #1 is live. 🎖️<br><br>Introducing the Mission Planner. Set checkpoints with their own speed, RoE, altitude, and radar rules, then give the order and watch your units carry it out autonomously while you focus on the bigger fight.<br><br>Full Dev Log on Steam:<br>https://t.co/Qp6D4biJX0<br>#MicroProse</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 17844 | 🔁 1916 | 💬 508
+              ❤️ 94 | 🔁 13 | 💬 1
             </div>
-            <a class='link' href='https://x.com/IndieGameJoe/status/2044522839122780378'>View on X</a>
+            <a class='link' href='https://x.com/micro_prose/status/2063088552833847757'>View on X</a>
           </div><h2>digital & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 221</span>
+            <span class='score-tag'>Heuristic: 221</span>
+            <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/Smartnotreally'>@Smartnotreally</a>
             <p>I've reviewed the Company's Q1 2026 results, the Management Information Circular, and the resolutions being presented to shareholders.<br><br>To be clear, my concern isn't the mechanics of a reverse split alone.<br><br>The Company reported positive net income, no meaningful debt, approximately $88 million in cash, substantial digital asset holdings, and what appears to be a significantly stronger balance sheet than many shareholders have seen in prior years. At the same time, shareholders are being asked to authorize the Board to implement a share consolidation of up to 12:1 at its sole discretion without returning for further shareholder approval.<br><br>Reasonable shareholders can support Nasdaq compliance, institutional expansion, UCITS initiatives, AMCs, Brazilian market development, and broader international growth while still asking a simple question:<br><br>Why is a reverse split the preferred path relative to other available alternatives?<br><br>The issue isn't whether a reverse split can raise the nominal share price. It can.<br><br>The issue is whether shareholders have been given enough information to understand why this approach is being prioritized over other options that may exist given the Company's balance sheet, asset base, and stated growth initiatives.<br><br>For example:<br><br>Share repurchases<br><br>Asset-backed credit facilities<br><br>Strategic financing alternatives<br><br>Other capital allocation strategies designed to support shareholder value while maintaining listing compliance<br><br>Perhaps management has evaluated these alternatives and concluded they are less attractive.<br><br>If so, additional transparency surrounding that analysis would be helpful.<br><br>A reverse split does not create intrinsic value by itself. Its purpose is largely structural - supporting exchange compliance, institutional eligibility, and market access.<br><br>If that is the rationale, shareholders should understand how management expects those benefits to translate into measurable long-term shareholder outcomes.<br><br>Equally important is the level of discretion being requested.<br><br>Shareholders are not being asked to approve a fixed consolidation ratio. They are being asked to authorize a consolidation of up to 12:1, at a time and ratio determined solely by the Board, without returning for further shareholder approval.<br><br>That is a meaningful grant of authority.<br><br>The concern is that when shareholders are asked to grant significant discretionary authority while the company trades at a valuation many believe does not reflect its underlying assets, operations, and future potential, shareholders naturally begin asking who ultimately benefits if that valuation disconnect persists.<br><br>The issue also extends beyond the reverse split itself.<br><br>The issue is not whether management has worked hard or achieved operational milestones.<br><br>The issue is whether compensation growth remains appropriately aligned with shareholder outcomes.<br><br>When shareholders have experienced significant equity destruction over multiple years, compensation increases become difficult to evaluate without a clear demonstration of how those increases correspond to measurable value creation for shareholders.<br><br>That is why many shareholders become frustrated.<br><br>Most long-term shareholders understand that building a business takes time. They understand markets move in cycles. They understand difficult periods occur and that management teams often make sacrifices along the way.<br><br>What becomes difficult to reconcile is when shareholders are asked to continue accepting dilution, declining share prices, expanded discretionary authority, and increasing executive compensation, while many of the same shareholders remain deeply underwater on their investments.<br><br>The question is not whether management deserves to be compensated. The question is whether shareholders are seeing a level of value creation that justifies the compensation being awarded.<br><br>Alignment matters. Accountability is not opposition. It is ownership.<br><br>The broader question is whether management has sufficiently articulated the roadmap that follows it, and whether shareholders have been provided enough information to evaluate why this path is preferable to other available alternatives.<br><br>Shareholders can support the business, support growth, support Nasdaq compliance, and still expect a clear explanation of how major governance and capital allocation decisions are expected to create value for the owners of the company.<br><br>And if the market continues assigning a value that many shareholders believe does not adequately reflect the operating business, international distribution network, ETP platform, institutional relationships, and balance sheet, one eventually begins to wonder whether the better investment is simply owning shares, owning more shares, or perhaps acquiring the company itself.<br><br>@jhnwtt @Forson @JanvanEck3 @matthew_sigel @VanEck_us @novogratz @DeFiTechGlobal @Valour @olivierfrancois @CSchlauf</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
               ❤️ 7 | 🔁 4 | 💬 4
             </div>
             <a class='link' href='https://x.com/Smartnotreally/status/2063317432169640312'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 214</span>
-            <a class='author' href='https://x.com/apyx_fi'>@apyx_fi</a>
-            <p>https://t.co/QBk50yAQPk</p>
+            <span class='score-tag'>Heuristic: 120</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/ItsRayBro_'>@ItsRayBro_</a>
+            <p>I disagree that we have no way to value crypto projects.<br><br>Is it as straightforward as valuing a company based on revenue, cash flow, and earnings? No. But that doesn't mean we're flying blind.<br><br>The first question should always be: What real-world problem does this project solve?<br><br>Does it reduce friction? Increase efficiency? Improve interoperability? Lower costs? Move value faster? Secure data? Enable new markets? If the answer is yes, then we're already moving beyond pure speculation and into utility.<br><br>Retail gets confused because too many people focus on token supply, logos, influencers, and price action instead of following where actual value and capital may flow in the future.<br><br>I look at RWU, adoption, trust, partnerships, network effects, regulatory positioning, and whether the technology solves a problem large institutions are willing to pay for.<br><br>Take XRP. The bull case isn't "number go up." It's global liquidity, cross-border settlement, tokenization, stablecoins, custody, and a decade of relationships Ripple has built with financial institutions around the world.<br><br>Take XLM. It's focused on efficient value transfer, remittances, financial inclusion, and connecting traditional finance with digital assets.<br><br>Take QNT. Its value proposition is interoperability. If the future contains thousands of blockchains, banking systems, CBDCs, tokenized assets, and private ledgers, somebody has to connect them.<br><br>Take Zebec. The thesis is programmable money, real-time payroll, streaming payments, and modernizing how money moves between employers, employees, consumers, and businesses.<br><br>None of these projects are valuable because they have a cool logo or a low token supply. They're valuable if they become part of the infrastructure that future digital finance runs on.<br><br>That's how I think about crypto.<br><br>Not "How many coins are there?"<br><br>But:<br><br>"Will trillions of dollars of value eventually flow through this network, use this technology, or depend on this infrastructure?"<br><br>That's the question that matters.</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 149 | 🔁 21 | 💬 15
+              ❤️ 0 | 🔁 0 | 💬 0
             </div>
-            <a class='link' href='https://x.com/apyx_fi/status/2062274212912566410'>View on X</a>
+            <a class='link' href='https://x.com/ItsRayBro_/status/2063761831785599295'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 199</span>
-            <a class='author' href='https://x.com/peterli34923561'>@peterli34923561</a>
-            <p>$HIMS --- On June 2, 2026, HIMS officially closed its $1.15B acquisition of Australia’s leading digital health firm Eucalyptus, expanding global footprint across four continents with core operations in Australia, Canada, Germany, UK & Japan. The landmark buyout builds cross-border clinical data network effects and sharply upgrades its proprietary AI diagnostic engine MedMatch.<br><br> Meanwhile, HIMS locked in official brand distribution partnerships with global GLP-1 giants Novo Nordisk and Eli Lilly, bringing authentic FDA-approved weight-loss injectables directly onto its subscription platform.<br><br>1. Unstoppable AI-powered Flywheel & Industry-Leading User Stickiness<br>Closed-loop model: Global user data feeds MedMatch AI → hyper-personalized treatment solutions → industry-high 85%+ long-term retention rate, forming nearly unbreakable competitive moat hard for peers to replicate.Moving beyond basic virtual consultation booking, HIMS has fully pivoted into data-backed personalized prescription & customized treatment ecosystem driven by MedMatch AIHims & Hers.Q1 2026 metrics: total paid subscribers hit 2.6M (+9% YoY), among which personalized-care subscribers surged 20% YoY to 1.7M, accounting for 65% of total user base.<br><br>2. Best-in-Class Unit Economics: Low CAC & Fast Payback<br>HIMS runs ultra-efficient DTC healthcare marketing, with customer acquisition cost payback cycle consistently under 12 months. Elevated recurring retention turns renewal orders into nearly pure incremental profit, delivering self-sustainable subscription SaaS financial profile superior to most digital healthcare peers.<br><br>3. Robust Cash Balance Eliminates Operational Risks<br>As of end-March 2026, HIMS holds over $751M cash & short-term investments on balance sheet plus $225M remaining authorized share repurchase capacity. Ample liquidity supports large-scale M&A like Eucalyptus takeover and mid-term business restructuring without solvency concerns.</p>
+            <span class='score-tag'>Heuristic: 92</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/ZaidLai'>@ZaidLai</a>
+            <p>Drawing lessons from India’s digital identity architecture and the UK’s integrated care systems, digital public health expert in Digital Innovations in Health and Social Care, Dr Zaid Olanrewaju, proposed a minimum  interoperability framework built on three pillars:</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
-              ❤️ 49 | 🔁 0 | 💬 0
+              ❤️ 0 | 🔁 0 | 💬 1
             </div>
-            <a class='link' href='https://x.com/peterli34923561/status/2062090171538104601'>View on X</a>
+            <a class='link' href='https://x.com/ZaidLai/status/2063759782259908610'>View on X</a>
           </div><h2>startup & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Signal Score: 3233</span>
-            <a class='author' href='https://x.com/paulg'>@paulg</a>
-            <p>One thing I sometimes do in office hours is calculate the implied probability represented by the startup's valuation. E.g. if a startup would be worth 10b if things go as planned and their dday valuation cap is 25m, they're a good bet if they have a 1/400 chance of being right.</p>
-            <div class='meta'>
-              ❤️ 1063 | 🔁 23 | 💬 80
-            </div>
-            <a class='link' href='https://x.com/paulg/status/2063644836981260638'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Signal Score: 631</span>
-            <a class='author' href='https://x.com/paulg'>@paulg</a>
-            <p>To get an accurate estimate you have to multiply by 3 or 4 to account for dilution by the time the company is worth billions. But the implied probability is still usually ridiculously low. Yesterday I talked to a startup whose implied probability was 1/10,000.</p>
-            <div class='meta'>
-              ❤️ 164 | 🔁 4 | 💬 11
-            </div>
-            <a class='link' href='https://x.com/paulg/status/2063646821801509184'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Signal Score: 316</span>
+            <span class='score-tag'>Heuristic: 316</span>
+            <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/Forbes'>@Forbes</a>
             <p>AI Coding Startup Lovable In Talks To Raise Funding At A $12 Billion Valuation<br>https://t.co/ydBJ0LAdJ9 https://t.co/Mv1KkYqZId</p>
+            <div class='reasoning'>Why: Grading failed.</div>
             <div class='meta'>
               ❤️ 118 | 🔁 19 | 💬 20
             </div>
             <a class='link' href='https://x.com/Forbes/status/2062971493382836550'>View on X</a>
-          </div><p style='text-align: center; color: #657786; margin-top: 50px;'><i>Last updated: 06/07/2026, 10:54:13 PM</i></p></body></html><!-- force update -->
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 305</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/Forbes'>@Forbes</a>
+            <p>Chai Discovery is working with major drugmakers to use its latest antibody AI model to find new therapies. Now it’s in talks to raise $400 million more VC funding at a $3.4 billion valuation, Forbes has learned. Full story: https://t.co/3yAs8MU6SK<br>📸: Cody Pickens for Forbes https://t.co/dpYwPnGFjf</p>
+            <div class='reasoning'>Why: Grading failed.</div>
+            <div class='meta'>
+              ❤️ 140 | 🔁 29 | 💬 18
+            </div>
+            <a class='link' href='https://x.com/Forbes/status/2062927751447982345'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 158</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/mehulshahca'>@mehulshahca</a>
+            <p>High valuations make great headlines.<br><br>They also make painful down-rounds later.<br><br>Too many founders chase valuation milestones instead of building a de-risked business.<br><br>Before asking for a higher valuation, fix these 3 things:<br><br>Customer Concentration: If 30%+ of revenue comes from 1-2 clients, that's a risk.<br><br>Key-Man Risk: If the founder disappears for 30 days and operations stop, you're not scalable yet.<br><br>Compliance: Shortcuts today become red flags during due diligence.<br><br>Investors don't pay a premium for potential alone.<br><br>They pay for reduced risk.<br><br>Fix the leaks before asking investors to pour more water into the bucket.<br><br>#Startups #Fundraising #VentureCapital #BusinessStrategy</p>
+            <div class='reasoning'>Why: Grading failed.</div>
+            <div class='meta'>
+              ❤️ 2 | 🔁 2 | 💬 1
+            </div>
+            <a class='link' href='https://x.com/mehulshahca/status/2063157454226235853'>View on X</a>
+          </div><p style='text-align: center; color: #657786; margin-top: 50px;'><i>Last updated: 06/07/2026, 11:25:07 PM</i></p></body></html>
+<!-- SHA: e38d84bc8453cc9a90f9997398787f43ab4b4440 -->
