@@ -20,6 +20,28 @@
   <h1>Akiff's High-Signal Xquik Digest</h1>
   <p>Curated using tuned calibration from @paulg, @mcuban, @nikillinit, and other elite signal providers.</p><h2>healthcare & Related</h2>
           <div class='tweet'>
+            <span class='score-tag'>Heuristic: 303</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/changmyung1981'>@changmyung1981</a>
+            <p>🔒 Multimodal Anonymizer: The Missing Infrastructure for Clinical Foundation Models<br><br>Hospitals generate petabytes of multimodal data—clinical notes, PDFs, radiology images, ECGs, echocardiograms, audio recordings, metadata, and even handwritten documents. Yet only a tiny fraction is reusable for AI because patient identifiers remain embedded across modalities.<br><br>A new medRxiv preprint introduces the Multimodal Anonymizer, a fully local, multi-agent AI framework designed to deidentify hospital data while preserving clinical utility. Rather than relying on a single LLM, the system combines multimodal reasoning models, OCR, specialized vision networks, rule-based engines, speech recognition, handwriting recognition, and iterative verification agents into a unified workflow.<br><br>The benchmark is unusually comprehensive:<br><br>• 250 multimodal MIMIC-IV patient bundles<br>• Text, tables, PDFs, DICOM images, metadata, filenames, audio, handwriting, facial images, and 3D head CT scans<br>• German clinical documents and external validation datasets<br>• Real-world validation on 250 Charité hospital partograms<br>The best local configuration used Qwen3-VL-235B-A22B-Thinking as the orchestrator model.<br>Key results:<br>✅ 98.8% patient-level deidentification sensitivity<br><br>✅ 99.82% PII-level sensitivity<br><br>✅ 99.6% preservation of clinically critical information<br><br>✅ ≥98.3% sensitivity across every modality tested<br><br>✅ 100% sensitivity and 100% critical clinical preservation on the real-world Charité validation cohort<br><br>One of the most interesting findings is that large local open-source models approached proprietary frontier systems. GPT-5.2 achieved marginally higher overall sensitivity, but the leading local Qwen model showed higher specificity and better date-shifting behavior, reducing unnecessary removal of clinically useful information.<br><br>The architecture reflects where clinical AI infrastructure is heading:<br><br>→ Multimodal reasoning instead of modality-specific pipelines<br>→ On-premises deployment for data sovereignty<br>→ Preservation of longitudinal timelines via deterministic date shifting<br>→ Verification agents that actively search for residual identifiers before release<br><br>The broader implication is significant. The bottleneck for healthcare AI is increasingly not model capability but secure access to multimodal clinical data. A robust deidentification layer may become as important as the foundation model itself.<br><br>If validated prospectively across institutions, systems like this could become foundational infrastructure for building hospital-scale multimodal foundation models while maintaining privacy compliance.<br><br>Reference<br>Hirsch A, Ten FW, Krüger KS, et al. The Multimodal Anonymizer: a fully local multi-agent AI system for medical data deidentification. medRxiv (2026).<br>DOI: 10.64898/2026.05.28.26353952<br>#AI #HealthcareAI #PrivacyPreservingAI #MultimodalAI #LLM #FoundationModels #MedicalAI #DigitalHealth #ClinicalData #OpenSourceAI</p>
+            <div class='reasoning'>Why: Graded via global scorer.</div>
+            <div class='meta'>
+              d 3 | = 0 | = 0
+            </div>
+            <a class='link' href='https://x.com/changmyung1981/status/2063458636861784267'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 233</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/withcline'>@withcline</a>
+            <p>Most doctors interact with AI through their EHR. The problem with that is EHRs aren't harnesses and when doctors use them they can't fine-tune the context, the model, or the performance. Instead, they're stuck with someone else's configuration. So if you're using AI in your medical practice, you 100% need to be managing and customizing these 5 things.<br><br>1. Deployment<br>2. Token optimization<br>3. Model usage and routing<br>4. Context engineering<br>5. Agent handoff orchestration<br><br>1. Deployment <br>- This used to be your EHR vendor's job. You paid them for the software, they deployed and maintained it under HIPAA. But now you're the builder, and with agent runtime (how agents command the code), you absolutely DO NOT want to hand that access back to a vendor when you're the one paying the LLM API bill. The only questions you should be asking are whether the deployment is HIPAA-compliant and whether you have audit trails and API session logging.<br><br>2. Token optimization<br>- You're burning through tokens before a project even starts, sometimes 100k or more. You should know every file and every system prompt your agent uses. Otherwise you're just lighting money on fire.<br><br>3. Model usage and routing<br>- Not all doctors are the same, but they're all doctors. They specialize in the medicine they practice, and LLMs are no different. They're all LLMs, but they don't all have the same training. If Claude Opus 4.8 is an Ortho, and the only model your EHR pushes is Claude Opus 4.8, then every clinical case and every operational task in your practice is being managed by an Ortho. That's why you need benchmarks: to understand which model performs best for which task and which agent.<br><br>4. Context engineering<br>- This is the brain of your entire practice: your clinical operations, your SOPs, your panel, your staff, your payments, your skills. If you can't customize this, you're using bolt-on AI, your data is NOT YOUR DATA, and you do not OWN YOUR PRACTICE.<br><br>5. Agent handoff orchestration<br>- Agent-to-agent communication is what makes AI special. It lets you run multiple agents in parallel (more than one agent running and completing tasks at the same time), with the right models, the right skills, and the least token consumption. Where practices go wrong is treating this like a Ronco Showtime Rotisserie. You can't set it and forget it. Agents need management just like people do, so if you aren't the one setting the rules, you're not really the boss. Your EHR vendor is.<br><br>This is why every doctor and clinician should be practicing with a clinical agentic harness like Cline, not a legacy EHR with architecture designed for pre-AI era deployment processes.</p>
+            <div class='reasoning'>Why: Graded via global scorer.</div>
+            <div class='meta'>
+              d 3 | = 0 | = 0
+            </div>
+            <a class='link' href='https://x.com/withcline/status/2063386609794367829'>View on X</a>
+          </div>
+          <div class='tweet'>
             <span class='score-tag'>Heuristic: 174</span>
             <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/harjitrathore'>@harjitrathore</a>
@@ -29,94 +51,72 @@
               d 2 | = 1 | = 0
             </div>
             <a class='link' href='https://x.com/harjitrathore/status/2062148078556295383'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Heuristic: 170</span>
-            <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/AshtraAI'>@AshtraAI</a>
-            <p>Ashtra Health - Agentic Orchestration Platform for Healthcare <br><br>✨ We are stepping into a new chapter! Ashtra is now a governed AI platform that automates the patient journey for mid-market healthcare with clinical-grade safety. <br><br>We build a complete growth system powered by our dedicated 6-Phase Healthcare AI ecosystem:<br>• Automated Patient Intake & Scheduling: Streamline fax/phone data extraction and book appointments 24/7 to save up to 18.5 hours/week per site.<br>• Instant Prior Authorization: Fully automate insurance submissions, tracking, and appeals to eliminate multi-day delays and reduce staff workload.<br>• AI Clinical Documentation: Automatically generate accurate SOAP notes from doctor-patient conversations, giving doctors 2–3 hours back every day.<br>• Smart Revenue Cycle Management: Optimize billing, claims, and appeals with AI to recover 15–20% of lost revenue.<br>• Predictive Patient Retention: Keep chronic patients engaged and recover missed orders with smart reminders for refills and care gaps.<br>• AI Training Simulation: Fast-track new staff onboarding by 50% using a risk-free, real-case AI simulation environment.<br><br>All of these phases are continuously validated by our Clinical Control Plane (CCP)—a 5-layer AI governance system ensuring 99%+ clinical accuracy, HIPAA compliance, and strict risk assessment before any action is executed.<br><br>Ashtra Health - Agentic Orchestration Platform for Healthcare <br>🎯 We empower you to lead the industry by transitioning to an AI-driven business model - driving smarter operations and measurable outcomes.<br>---------------------------<br>Message Ashtra to be one of the first businesses to get a free consultation on automating the patient journey with clinical-grade safety.<br>👉 Book a free consultation: https://t.co/rxCCh4L2by<br>👉 Explore the product: https://t.co/e7dI7m8lZN<br>☎️ Hotline: (714) 660-7077<br>📧 Email: contact@ashtra.ai<br><br>#Ashtra #AISoftware #BusinessManagement #BusinessAutomation #AllinoneAI #HealthcareAI #PharmacyOperations #USHealthcare</p>
-            <div class='reasoning'>Why: Graded via global scorer.</div>
-            <div class='meta'>
-              d 0 | = 0 | = 0
-            </div>
-            <a class='link' href='https://x.com/AshtraAI/status/2063267224354218191'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Heuristic: 161</span>
-            <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/t_dumbre'>@t_dumbre</a>
-            <p>80% of patient data is locked in messy clinical notes. <br><br>AuraClinical AI reads handwritten shorthand, turning it into structured data to stop medical errors before they happen.   <br><br>⏱️ Cuts documentation time by 70% <br>❌ Reduces errors by 90% <br><br> #HealthcareAI #HealthIT #EHR https://t.co/VLzU5VjGex</p>
-            <div class='reasoning'>Why: Graded via global scorer.</div>
-            <div class='meta'>
-              d 1 | = 0 | = 0
-            </div>
-            <a class='link' href='https://x.com/t_dumbre/status/2063688009447534684'>View on X</a>
           </div><h2>AI & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 1112</span>
+            <span class='score-tag'>Heuristic: 421</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/dair_ai'>@dair_ai</a>
+            <p>// Reusable Context Engineering //<br><br>Context bloat quietly kills long-horizon runs, but you can fix it from the outside without fine-tuning the underlying agent.<br><br>(bookmark this)<br><br>Context management is usually baked into an agent's own prompt or weights, which does not transfer and cannot wrap a closed model.<br><br>New research introduces AdaCoM, which trains a separate LLM with end-to-end RL to prune or preserve the context of a frozen, possibly closed-source agent.<br><br>That turns context engineering into a reusable, model-agnostic policy you train once and reuse, with substantial gains across diverse agents on web search and deep research. The authors also surface a capability-dependent fidelity-reliability trade-off, and find transfer works best between agents of similar capability.<br><br>Paper: https://t.co/2n1dpMs7QR<br><br>Learn to build effective AI agents in our academy: https://t.co/LRnpZN7L4c</p>
+            <div class='reasoning'>Why: Graded via global scorer.</div>
+            <div class='meta'>
+              d 179 | = 26 | = 20
+            </div>
+            <a class='link' href='https://x.com/dair_ai/status/2061455253325971789'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 282</span>
             <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/iam_elias1'>@iam_elias1</a>
-            <p>PewDiePie just embarrassed every AI startup in Silicon Valley.<br><br>He built a better local AI workspace than most funded companies. Gave it away for free. And hit 20,000 GitHub stars before most people woke up.<br><br>The project is called Odysseus. And the story behind it is more interesting than the product.<br><br>Felix Kjellberg better known as PewDiePie has 111 million YouTube subscribers. He is the most subscribed individual creator in the history of the platform. He retired from daily content in 2022 to raise his son in Japan. The world assumed he was done building things.<br><br>He was not.<br><br>He launched Odysseus on June 1, 2026 announcing it in a YouTube video titled "MY trillion $ Dollar Project is finally OUT!" a free, open-source, self-hosted AI workspace designed to be a fully private alternative to ChatGPT and Claude.<br><br>Here is what Odysseus actually does.<br><br>Odysseus tracks no user telemetry, operates entirely without subscription fees, and retains all context on your local machine. It includes advanced autonomous agents capable of running shell commands, editing files, and browsing the web safely.<br><br>Chat, agents, deep research, docs, memory, and email basically ChatGPT and Claude UX on your own hardware. 20,000 GitHub stars in 24 hours.<br><br>Here is the comparison nobody in the AI industry wants to make publicly.<br><br>ChatGPT Plus: $20 per month. Your conversations stored on OpenAI's servers. Your data used to improve their models. Their infrastructure. Their terms. Their decisions about what you can and cannot do.<br><br>Claude Pro: $20 per month. Same structure. Anthropic's servers. Anthropic's terms.<br><br>Odysseus: $0. Your hardware. Your data. Your rules. Zero telemetry. Zero bytes sent to anyone else's server. Ever.<br><br>MIT license. 88 contributors. 22,400 stars. 2,800 forks. v1.0 already released. Use any local or cloud model, zero software cost.<br><br>Here is what is inside the workspace.<br><br>Full chat interface, the same conversational UI experience as ChatGPT and Claude, running locally. Autonomous agents with shell access, file editing, and web browsing, the same agentic capabilities that Claude Code and GPT-5 offer, running on your own machine. Deep research mode multi-step autonomous research across the web, synthesized into a structured report. Document management. Persistent memory across sessions. Email integration. MCP support for connecting to any external tool or service.<br><br>Odysseus auto-registers built-in MCP servers at startup including a browser server with Playwright for page navigation, screenshots, and vision capabilities. Non-admin users do not get shell or file access by default admin-only routes including MCP management, API tokens, and model serving are admin-gated.<br><br>Works on macOS, Windows, and Linux. Uses Ollama for local model inference on Mac. Supports any Hugging Face model. Supports cloud APIs for Claude, GPT, Gemini, and DeepSeek if you want cloud performance with local orchestration.<br><br>Most of Odysseus's code was written with AI models, not just by a human.<br><br>PewDiePie used AI to build an AI workspace. Then open-sourced it. Then gave it to 111 million people for free.<br><br>Here is the detail that should make every AI founder uncomfortable.<br><br>If a traditional tech startup promised a seamless, zero-telemetry local workspace featuring autonomous agents, deep research, and automated local model orchestration completely for free you would be incredibly skeptical. The fact that this project arrives via a massive creator repository makes it one of the most fascinating disruptive plays in the open-source community this year.<br><br>OpenAI raised $40 billion.<br><br>Anthropic raised $12 billion.<br><br>PewDiePie raised nothing. Shipped a product that competes with both. And gave it away for free.<br><br>The most subscribed YouTuber in history just became an open-source AI developer.<br><br>And the product is actually good.<br><br>Source: GitHub · Gizmodo · NerdZap · ExplainX · Dhaka Tribune · June 1, 2026<br><br>(Link in the comments)</p>
+            <p>Everyone’s racing to ship “state of the art.”<br><br>MiniMax M3 quietly dropped:<br><br>• strong coding + agentic benchmarks<br>• 1M context<br>• native multimodal<br>• open weights<br><br>That combo is actually rare right now.<br><br>Feels like we’re entering the era where open models stop being “cheap alternatives” and start becoming serious infrastructure for builders.</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 504 | = 112 | = 76
+              d 63 | = 28 | = 15
             </div>
-            <a class='link' href='https://x.com/iam_elias1/status/2062095528742240319'>View on X</a>
+            <a class='link' href='https://x.com/iam_elias1/status/2061519475455951155'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 638</span>
+            <span class='score-tag'>Heuristic: 281</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/testingcatalog'>@testingcatalog</a>
-            <p>MICROSOFT 🔥: Early look at Microsoft Scout Agent for Microsoft Frontier users. <br><br>Scout agent is designed for work use cases and was recently revealed at Microsoft Build 2026. <br><br>Features 👀<br><br>> Models from OpenAI and Anthropic, including GPT-5.5 and Claude Opus 4.7<br>> Multi-step automations with support for browser use. <br>> Co-Create, an open canvas where users can collaborate with AI and export outputs as documents. <br>> Deep integration with Microsoft Teams<br>> Daily Briefing that summarises work context across connected services. <br>> Skills support, document generation, coding capabilities, and all that.<br>> Both macOS and Windows apps are available. <br><br>It would be quite a decent tool for Windows users! Yet, it is only for Frontier. Looking forward to testing their super app too.</p>
+            <a class='author' href='https://x.com/nonepcbl'>@nonepcbl</a>
+            <p>you're not using AI wrong<br><br>you're just using it like it's still 2023<br><br>met a dev yesterday<br><br>he said something that sounded stupid at first:<br><br>"i don't prompt anymore"<br><br>i asked what he means<br><br>he showed me a bug:<br><br>broken code<br>failing test<br>logs everywhere<br><br>no clever prompt<br><br>just:<br><br>"fix it"<br><br>the model:<br><br>> read the repo<br>> found the root cause<br>> patched it<br>> explained why<br>> verified the result<br><br>no back-and-forth<br>no babysitting<br><br>that’s when it clicked<br><br>AI didn't suddenly get smarter<br><br>we just stopped using it as a chatbot<br><br>most people still do this:<br><br>open chat<br>ask<br>copy answer<br>repeat<br><br>every time from zero<br><br>meanwhile others are building:<br><br>agents that read everything<br>agents that run full workflows<br>agents that actually finish tasks<br><br>this is why models like Minimax M3 matter<br><br>not because of benchmarks<br><br>because they're built for:<br><br>> long context<br>> tools<br>> real execution<br><br>same shift everywhere:<br><br>Anthropic -> Claude Code agents<br>OpenAI -> tool-based workflows<br>MiniMax -> cheap agent models<br><br>different companies<br>same direction<br><br>AI is no longer answering<br><br>it's operating<br><br>and if you're still writing prompts manually<br><br>you're basically coding in Notepad in 2026<br><br>follow before you're the last one debugging by hand</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 447 | = 32 | = 18
+              d 82 | = 29 | = 7
             </div>
-            <a class='link' href='https://x.com/testingcatalog/status/2062960629837639763'>View on X</a>
-          </div>
-          <div class='tweet'>
-            <span class='score-tag'>Heuristic: 440</span>
-            <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/HowToAI_'>@HowToAI_</a>
-            <p>China just handed the AI agent community a production-grade sandbox for free.<br><br>OpenSandbox is an open-source sandbox runtime for AI agents. Secure, fast, and built for coding agents, GUI agents, code execution, and RL training.<br><br>- SDKs in Python, Go, TS, Java, C#, .NET<br>- Runs on Docker or Kubernetes<br>- Strong isolation via gVisor, Kata, Firecracker<br>- Works with Claude Code, Codex, Gemini CLI, Qwen Code<br><br>100% Open Source. 10k Stars on GitHub.</p>
-            <div class='reasoning'>Why: Graded via global scorer.</div>
-            <div class='meta'>
-              d 195 | = 50 | = 10
-            </div>
-            <a class='link' href='https://x.com/HowToAI_/status/2061934130674196723'>View on X</a>
+            <a class='link' href='https://x.com/nonepcbl/status/2063266623667032181'>View on X</a>
           </div><h2>indie & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 169</span>
+            <span class='score-tag'>Heuristic: 290</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/HitbreakGames'>@HitbreakGames</a>
-            <p>Two players can equip the exact same loadout and fight completely differently.<br><br>One might dive into close range for maximum damage.<br>The other might manage distance to for more safety.<br><br>A build gives you options.<br>Your decisions determine the outcome.<br>#Mecha #indiegame #CodeRapid https://t.co/XF0R7VvZPi</p>
+            <a class='author' href='https://x.com/IndieReachpro'>@IndieReachpro</a>
+            <p>🚨 INDIE GAME SHOWCASE TIME 🚨<br><br>Devs, show us what you’re building 👇<br><br>🎮 Game Title + Genre<br>🔥 Drop your BEST clip or screenshot<br><br>Let’s discover hidden indie gems and support each other 💙<br><br>#IndieDev #IndieGameDev #IndieGame #IndieGames #Gamedev 🎮 #ScreenshotSaturday https://t.co/z9YIzRLMPh</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 101 | = 8 | = 1
+              d 86 | = 13 | = 85
             </div>
-            <a class='link' href='https://x.com/HitbreakGames/status/2062534845658722742'>View on X</a>
+            <a class='link' href='https://x.com/IndieReachpro/status/2063205530915770756'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 133</span>
+            <span class='score-tag'>Heuristic: 184</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/1001binary'>@1001binary</a>
-            <p>Hey, let’s connect 👋<br><br>I’ve been building Shippstream - a social network for indie devs, solopreneurs, and builders who want to ship in public and stay consistent.<br><br>The idea is simple:<br>you post short updates about what you’re building (we call them ships) → they go public → you get feedback + visibility → over time it builds streaks, reputation, and discovery.<br><br>If you’ve launched something or you’re building in public, you can post your updates there and let people follow your progress in real time.<br><br>It’s still early, but I’m shipping improvements constantly based on feedback.<br><br>👉 Totally free, registration open:<br>https://t.co/HYYWKq43a3<br><br>Would genuinely love to connect with other founders, indie hackers, and builders doing their own thing.<br><br>If you’re building something, drop a ship 🚀</p>
+            <a class='author' href='https://x.com/StarbloomOps'>@StarbloomOps</a>
+            <p>Hey @X 👋<br><br>I’m connecting with indie SaaS builders and solo founders who are:<br><br>- Shipping products (with or without AI)<br>- Good at building, but finding customer acquisition the real bottleneck<br>- Tired of launching to crickets<br>- Wearing every hat and trying to grow without a big team or budget<br><br>If you’re in the trenches building and trying to get your first (or next) paying users — say hello. Let’s grow together.<br><br>#buildinpublic #indiehacker #SaaS</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 1 | = 0 | = 1
+              d 19 | = 0 | = 23
             </div>
-            <a class='link' href='https://x.com/1001binary/status/2062181731252203607'>View on X</a>
+            <a class='link' href='https://x.com/StarbloomOps/status/2063629412642271265'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 123</span>
+            <span class='score-tag'>Heuristic: 132</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/micro_prose'>@micro_prose</a>
-            <p>Battlespace Command: Dev Log #1 is live. 🎖️<br><br>Introducing the Mission Planner. Set checkpoints with their own speed, RoE, altitude, and radar rules, then give the order and watch your units carry it out autonomously while you focus on the bigger fight.<br><br>Full Dev Log on Steam:<br>https://t.co/Qp6D4biJX0<br>#MicroProse</p>
+            <a class='author' href='https://x.com/IndieReachpro'>@IndieReachpro</a>
+            <p>🚨 INDIE GAME SHOWCASE TIME 🚨<br><br>Devs, show us what you’re building 👇<br><br>🎮 Game Title + Genre<br>🔥 Drop your BEST clip or screenshot<br><br>Check comment box for something special!<br><br>#IndieDev #IndieGameDev #IndieGame #IndieGames #Gamedev 🎮 #ScreenshotSunday https://t.co/8FUbxvih9N</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 95 | = 13 | = 1
+              d 37 | = 0 | = 30
             </div>
-            <a class='link' href='https://x.com/micro_prose/status/2063088552833847757'>View on X</a>
+            <a class='link' href='https://x.com/IndieReachpro/status/2063658114025709946'>View on X</a>
           </div><h2>digital & Related</h2>
           <div class='tweet'>
             <span class='score-tag'>Heuristic: 649</span>
@@ -130,17 +130,6 @@
             <a class='link' href='https://x.com/The_DTCC/status/2062587567900430366'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 161</span>
-            <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/BHTYJournal'>@BHTYJournal</a>
-            <p>ConV2X - focusing on the infrastructure required to make technology work!<br>FIRST SPEAKER COHO​RT ANNOUNCED<br>What happens when leaders from some of the most innovative healthcare and decentralized technology companies come together in Cambridge?<br><br>You're about to find out...<br><br>Featured speakers include:<br> ✔️ Himanshu Jain — Tech Innovation Leader<br> ✔️Leo Anthony Celi — @harvardmed  <br> ✔️Ajaz Hussain — Former U.S. @FDA  Deputy Director<br> ✔️Francisco Curbera — @AccreteAI <br> ✔️Nitin Gaur — @Nethermind <br> ✔️Anjum Khurshid — @HarvardPilgrim  Health Care Institute<br> ✔️Martin Curley — @MaynoothUni  <br> ✔️Shawnna Hoffman — @ArmoredQuantum<br> ✔️ Jose Bolanos — #Nimbus<br> ✔️Jim Nasr — @acoerco <br> ✔️Rama Rao — @bloqcube111 <br><br>Stay tuned for many more leaders soon...<br><br>Topics include:<br> 🔹 Agentic AI & Multi-Agent Healthcare Systems<br> 🔹Enterprise AI Infrastructure<br> 🔹Healthcare Cybersecurity & Quantum Readiness<br> 🔹Blockchain & Digital Trust<br>🔹 Decentralized Health Platforms<br> 🔹Data Governance & Interoperability<br> 🔹Regulatory Challenges & Opportunities<br> <br>The Future of Healthcare Technology Architecture<br> The Foundry | Cambridge, Massachusetts<br> September 24–25, 2026<br><br>👉 REGISTER NOW - seating is limited by design. 150 MAX.<br>https://t.co/2IS1yJSGKu<br><br>Interested in sponsoring or exhibiting?<br>Contact Ramy Azzam, MD<br>r.azzam@partnersindigitalhealth.com<br><br>#AIInfrastructure #HealthcareAI #ArtificialIntelligence #LifeSciences #Blockchain #Cybersecurity #AgenticAI #DigitalTrust #HealthPolicy #QuantumComputing #Interoperability #EnterpriseAI #CambridgeMA</p>
-            <div class='reasoning'>Why: Grading failed.</div>
-            <div class='meta'>
-              d 1 | = 0 | = 0
-            </div>
-            <a class='link' href='https://x.com/BHTYJournal/status/2063683437261705306'>View on X</a>
-          </div>
-          <div class='tweet'>
             <span class='score-tag'>Heuristic: 141</span>
             <span class='llm-tag'>LLM: 0/100</span>
             <a class='author' href='https://x.com/Finsee_main'>@Finsee_main</a>
@@ -150,38 +139,49 @@
               d 1 | = 0 | = 0
             </div>
             <a class='link' href='https://x.com/Finsee_main/status/2062630352808521779'>View on X</a>
+          </div>
+          <div class='tweet'>
+            <span class='score-tag'>Heuristic: 90</span>
+            <span class='llm-tag'>LLM: 0/100</span>
+            <a class='author' href='https://x.com/nyonenyone'>@nyonenyone</a>
+            <p>Methodological frameworks for economic evaluation of digital health interventions - Value in Health https://t.co/BQgFxJlhjC</p>
+            <div class='reasoning'>Why: Grading failed.</div>
+            <div class='meta'>
+              d 0 | = 0 | = 0
+            </div>
+            <a class='link' href='https://x.com/nyonenyone/status/2063250093697102286'>View on X</a>
           </div><h2>startup & Related</h2>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 423</span>
+            <span class='score-tag'>Heuristic: 5163</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/Cointelegraph'>@Cointelegraph</a>
-            <p>A two-month-old #AI startup just raised $113 million seed #funding at a $260 million valuation. https://t.co/vptLZiWqzg</p>
+            <a class='author' href='https://x.com/unusual_whales'>@unusual_whales</a>
+            <p>BREAKING: Elon Musk’s artificial intelligence startup X AI is set to close its funding round at a valuation of about $18 billion as soon as this week, per Bloomberg.</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 137 | = 44 | = 45
+              d 4211 | = 338 | = 97
             </div>
-            <a class='link' href='https://x.com/Cointelegraph/status/1668887132621123584'>View on X</a>
+            <a class='link' href='https://x.com/unusual_whales/status/1788369267827573038'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 316</span>
+            <span class='score-tag'>Heuristic: 3651</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/Forbes'>@Forbes</a>
-            <p>AI Coding Startup Lovable In Talks To Raise Funding At A $12 Billion Valuation<br>https://t.co/ydBJ0LAdJ9 https://t.co/Mv1KkYqZId</p>
+            <a class='author' href='https://x.com/paulg'>@paulg</a>
+            <p>One thing I sometimes do in office hours is calculate the implied probability represented by the startup's valuation. E.g. if a startup would be worth 10b if things go as planned and their dday valuation cap is 25m, they're a good bet if they have a 1/400 chance of being right.</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 118 | = 19 | = 20
+              d 1220 | = 26 | = 83
             </div>
-            <a class='link' href='https://x.com/Forbes/status/2062971493382836550'>View on X</a>
+            <a class='link' href='https://x.com/paulg/status/2063644836981260638'>View on X</a>
           </div>
           <div class='tweet'>
-            <span class='score-tag'>Heuristic: 289</span>
+            <span class='score-tag'>Heuristic: 684</span>
             <span class='llm-tag'>LLM: 0/100</span>
-            <a class='author' href='https://x.com/AtomsNotBits'>@AtomsNotBits</a>
-            <p>Daily Hard Tech Headlines:<br><br>- @GoToImpulse secured a $500M Series D led by 137 Ventures and BANNER VC. The LA startup develops in-space mobility technology.<br><br>- @westmagco secured $11M in funding led by Andreessen Horowitz. The SF startup is building American robot actuators and drone motors.<br><br>- @layupparts secured a $42M Series A led by Marlinspike. The Orange County startup is building software-enabled manufacturing for rapid custom composite parts production.<br><br>- The Whiskey Project Group is delivering expeditionary watercraft for the U.S. Navy, with six vessels to be delivered under a deal totaling $17.5M.<br><br>- @DroneShield has secured a $24.9M deal focused on delivery of mobile and fixed C-UAS systems to Joint Interagency Task Force 401, the DoW C-UAS group.<br><br>- @HelsingAI, the European defense tech firm, has launched RX-1, a quadruped robotics platform that will be made available to academic institutions and robotics labs across Europe to advance European robotics research.<br><br>- Atana Elements raised a $27.5M seed round led by @lowercarbon. The startup develops an AI-powered exploration platform for critical minerals found in subsurface brines and flowing mineral systems.<br><br>- @cone_labs secured a $1.5M pre-seed round led by Spatial Capital. The Canadian startup develops physical infrastructure inspection technology.<br><br>- Aluminium Bahrain, the Gulf-based aluminum producer and smelter, is acquiring Aluminium Dunkerque, the French aluminum smelter, for approximately $2.2B.<br><br>- Voyager Technologies is acquiring Astrobotic for up to $300M. The Pittsburgh company develops lunar landing, delivery, and surface power technology.<br><br>- @urencousa is investing billions to expand America’s uranium enrichment capacity, adding 2.1 million SWU at its New Mexico facility to strengthen the domestic nuclear fuel supply chain.<br><br>- @OndasHoldings secured a $4.8M initial contract to provide high-altitude balloon systems for a U.S. Navy SOUTHCOM maritime domain awareness program.</p>
+            <a class='author' href='https://x.com/paulg'>@paulg</a>
+            <p>To get an accurate estimate you have to multiply by 3 or 4 to account for dilution by the time the company is worth billions. But the implied probability is still usually ridiculously low. Yesterday I talked to a startup whose implied probability was 1/10,000.</p>
             <div class='reasoning'>Why: Graded via global scorer.</div>
             <div class='meta'>
-              d 82 | = 12 | = 2
+              d 182 | = 4 | = 13
             </div>
-            <a class='link' href='https://x.com/AtomsNotBits/status/2061951482468122811'>View on X</a>
-          </div><p style='text-align: center; color: #657786; margin-top: 50px;'><i>Last updated: 06/08/2026, 12:46:07 AM</i></p></body></html>
-<!-- SHA: 0b6a476c6b17e730a623e70e13070f8c6fc54e6f -->
+            <a class='link' href='https://x.com/paulg/status/2063646821801509184'>View on X</a>
+          </div><p style='text-align: center; color: #657786; margin-top: 50px;'><i>Last updated: 06/08/2026, 02:21:25 AM</i></p></body></html>
+<!-- SHA: cf25ddb79d81bbe23c46e577adae4a1e50aae522 -->
